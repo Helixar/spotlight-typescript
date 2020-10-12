@@ -2,7 +2,7 @@ export default class SpotlightItem
 {
     public element!: HTMLLIElement | null
     private title: string
-    private href: string
+    private readonly href: string
 
     constructor(title: string, href: string)
     {
@@ -42,17 +42,17 @@ export default class SpotlightItem
         this.element?.setAttribute('hidden', 'hidden')
     }
 
-    select()
+    select(): void
     {
         this.element?.classList.add('bg-black', 'bg-opacity-25')
     }
 
-    unselect()
+    unselect(): void
     {
         this.element?.classList.remove('bg-black', 'bg-opacity-25')
     }
 
-    follow()
+    follow(): void
     {
         window.location.href = this.href
     }
